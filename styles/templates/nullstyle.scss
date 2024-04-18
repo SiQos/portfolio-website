@@ -4,7 +4,6 @@
   border: 0;
 }
 
-
 *,
 *:before,
 *:after {
@@ -12,7 +11,6 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-
 
 :focus,
 :active {
@@ -23,7 +21,6 @@ a:active {
   outline: none;
 }
 
-
 nav,
 footer,
 header,
@@ -31,26 +28,27 @@ aside {
   display: block;
 }
 
-
 html,
 body {
   height: 100%;
   width: 100%;
   font-size: 100%;
   line-height: 1;
-  font-size: 14px;
+  font-size: 16px;
+  cursor:
+    url("../../assets/images/icons/cursor.svg") 15 15,
+    move;
+
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
-
 
 input,
 button,
 textarea {
   font-family: inherit;
 }
-
 
 input::-ms-clear {
   display: none;
@@ -83,4 +81,16 @@ h5,
 h6 {
   font-size: inherit;
   font-weight: inherit;
+}
+
+a[href],
+button,
+input[type="checkbox"],
+input[type="image"],
+input[type="submit"],
+label[for],
+select {
+  cursor:
+    url("../../assets/images/icons/pointer.svg") 15 15,
+    move !important;
 }
