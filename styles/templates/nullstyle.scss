@@ -30,6 +30,7 @@ aside {
 
 html,
 body {
+  font-family: "Exo";
   height: 100%;
   width: 100%;
   font-size: 100%;
@@ -38,7 +39,6 @@ body {
   cursor:
     url("../../assets/images/icons/cursor.svg") 15 15,
     move;
-
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;

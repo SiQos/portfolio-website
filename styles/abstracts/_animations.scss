@@ -7,3 +7,45 @@
     opacity: 1;
   }
 }
+
+@keyframes flickerBoard {
+  0% {
+    opacity: 0;
+  }
+  23.333333% {
+    opacity: 1;
+  }
+  56.666667% {
+    opacity: 0;
+  }
+  83.333333% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes rotationEyeLeft {
+  0% {
+    transform: translate(175.976364px, 158.980988px) rotate(0deg);
+  }
+  50% {
+    transform: translate(175.976364px, 158.980988px) rotate(182.5deg);
+  }
+  100% {
+    transform: translate(175.976364px, 158.980988px) rotate(365deg);
+  }
+}
+
+@keyframes rotationEyeRight {
+  0% {
+    transform: translate(194.215378px, 160.578003px) rotate(0deg);
+  }
+  83.333333% {
+    transform: translate(194.215378px, 160.578003px) rotate(182.5deg);
+  }
+  100% {
+    transform: translate(194.215378px, 160.578003px) rotate(365deg);
+  }
+}
