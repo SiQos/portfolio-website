@@ -1,0 +1,355 @@
+.header {
+  width: 100%;
+  background-color: $colorBlue;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  animation: fadeInDown 1s ease forwards;
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin: 0 auto;
+    height: 13vh;
+
+    @extend %padding-container;
+
+    @media (max-width: 980px) {
+      height: 12vh;
+    }
+  }
+
+  &__logo {
+    border-radius: 50%;
+    overflow: hidden;
+
+    img {
+      width: 100px;
+      height: 100px;
+
+      @media (max-width: 980px) {
+        width: 90px;
+        height: 90px;
+      }
+
+      @media (max-width: 768px) {
+        width: 80px;
+        height: 80px;
+      }
+
+      @media (max-width: 320px) {
+        width: 70px;
+        height: 70px;
+      }
+    }
+  }
+
+  &__burger {
+    display: block;
+    position: relative;
+    height: 53px;
+    width: 65px;
+    padding: 0.7rem;
+    z-index: 3;
+    @media (max-width: 980px) {
+      width: 55px;
+    }
+    @media (max-width: 768px) {
+      width: 50px;
+    }
+    @media (max-width: 321px) {
+      width: 40px;
+    }
+    span,
+    &::before,
+    &::after {
+      @extend %burgerItem;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+    }
+    span {
+      width: 100%;
+      @media (max-width: 768px) {
+        top: 2px;
+      }
+    }
+
+    &::before {
+      top: 20px;
+      width: 80%;
+      @media (max-width: 980px) {
+        width: 50%;
+      }
+      @media (max-width: 768px) {
+        top: 15px;
+      }
+    }
+
+    &::after {
+      top: 39px;
+      width: 65%;
+      @media (max-width: 980px) {
+        width: 100%;
+      }
+      @media (max-width: 768px) {
+        top: 30px;
+      }
+    }
+
+    &:hover {
+      cursor: pointer;
+
+      span {
+        top: -5px;
+      }
+
+      &::after {
+        top: 45px;
+      }
+    }
+
+    &._open {
+      & span {
+        transform: rotate(-135deg);
+        top: 20px;
+
+        @media (max-width: 728px) {
+          background-color: $colorBlue;
+        }
+      }
+
+      &::after {
+        transform: rotate(135deg);
+        top: 20px;
+        width: 100%;
+
+        @media (max-width: 728px) {
+          background-color: $colorBlue;
+        }
+      }
+
+      &::before {
+        display: none;
+      }
+    }
+  }
+}
+
+.menu {
+  display: none;
+  background-color: $colorBlue;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 1;
+  user-select: none;
+  &_large {
+    display: flex;
+    grid-area: menu;
+    width: 100%;
+    height: 100%;
+    width: 50vw;
+    background-color: rgb(30, 33, 40);
+
+    @media (max-width: 728px) {
+      flex-direction: column;
+      width: 100vw;
+    }
+  }
+
+  &_small {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    grid-area: small;
+    text-align: right;
+    background: #1e2128;
+    height: 100%;
+    width: 100%;
+  }
+
+  &__list {
+    margin-right: 35px;
+
+    @media (max-width: 728px) {
+      margin: 100px auto;
+    }
+  }
+
+  &__item {
+    position: relative;
+    &:not(:last-child) {
+      margin-bottom: 40px;
+    }
+
+    @media (max-width: 728px) {
+      text-align: center;
+    }
+
+    &:hover {
+      padding: 5px 0px;
+      @media (max-width: 728px) {
+        padding: 0px;
+        position: relative;
+        left: 5px;
+      }
+    }
+  }
+
+  &__link {
+    font-size: 5rem;
+    color: #f5f5f5;
+    letter-spacing: 3px;
+    text-decoration: none;
+    color: $colorBlue;
+
+    @media (max-width: 1024px) {
+      font-size: 4rem;
+    }
+    @media (max-width: 728px) {
+      font-size: 3rem;
+    }
+  }
+
+  &._open {
+    display: grid;
+    grid-template-areas:
+      "menu ."
+      "menu small";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 3fr;
+    width: 100%;
+    max-width: 100%;
+    @media (max-width: 728px) {
+      grid-template-areas: "small" "menu";
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr;
+    }
+
+    .menu_large .github {
+      animation-timeline: auto;
+      animation-range-start: normal;
+      animation-range-end: normal;
+      animation: 0.5s ease 0s 1 normal forwards running zoomIn;
+      transition: opacity 0.5s ease 0s;
+    }
+
+    .menu_large .linkedin {
+      animation-timeline: auto;
+      animation-range-start: normal;
+      animation-range-end: normal;
+      animation: 1s ease 0s 1 normal forwards running zoomIn;
+      transition: opacity 0.5s ease 0s;
+    }
+  }
+}
+
+.github,
+.linkedin {
+  @extend %flexTemplate;
+  color: #d6d6d6;
+  cursor: pointer;
+  width: 50%;
+
+  @media (max-width: 728px) {
+    width: 100vw;
+    height: 50%;
+    max-width: 100%;
+  }
+}
+
+.github {
+  background-color: #333;
+  &__container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    @media (max-width: 728px) {
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+      padding: 0px 20px;
+    }
+  }
+
+  &__icon {
+    display: block;
+    margin-bottom: 9rem;
+    transform: rotate(270deg);
+    width: 85px;
+    height: 85px;
+
+    @media (max-width: 728px) {
+      transform: rotate(0deg);
+      margin-bottom: 0px;
+    }
+  }
+
+  &__text {
+    font-size: 5.5rem;
+    transform: rotate(270deg);
+    padding-right: 7rem;
+    font-weight: 728;
+    text-align: center;
+    @media (max-width: 1024px) {
+      font-size: 4rem;
+    }
+    @media (max-width: 728px) {
+      transform: rotate(0deg);
+      font-size: 3rem;
+      padding: 0px;
+    }
+  }
+}
+
+.linkedin {
+  background-color: #0077b5;
+  &__container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    @media (max-width: 728px) {
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+      padding: 0px 20px;
+    }
+  }
+
+  &__icon {
+    display: block;
+    margin-bottom: 9rem;
+    transform: rotate(270deg);
+    width: 85px;
+    height: 85px;
+
+    @media (max-width: 728px) {
+      transform: rotate(0deg);
+      margin: 0px;
+    }
+  }
+
+  &__text {
+    font-size: 5.5rem;
+    font-weight: 728;
+    transform: rotate(270deg);
+    padding-right: 7rem;
+    text-align: center;
+
+    @media (max-width: 1024px) {
+      font-size: 4rem;
+    }
+
+    @media (max-width: 728px) {
+      transform: rotate(0deg);
+      font-size: 2rem;
+      padding: 0px;
+    }
+  }
+}

@@ -1,0 +1,132 @@
+.eyeLeft {
+  animation: rotationEyeLeft 3500ms linear infinite normal forwards;
+}
+.eyeRight {
+  animation: rotationEyeRight 3500ms linear infinite normal forwards;
+}
+.smallItem {
+  animation: flickerBoard 3000ms linear infinite normal forwards;
+}
+.bigItem {
+  animation: flickerBoard 3000ms linear infinite normal forwards;
+}
+
+.about {
+  position: relative;
+  background-image: url("./assets/images/backgrounds/background-image.jpg");
+  background-size: cover;
+  background-position: top;
+  &:before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: "";
+    background-color: rgba(6, 7, 8, 0.603);
+    width: 100%;
+    height: 100%;
+  }
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @extend %padding-container;
+    position: relative;
+    z-index: 1;
+    padding: 50px;
+    @media (max-width: 1080px) {
+      flex-direction: column;
+    }
+    @media (max-width: 768px) {
+      padding: 30px;
+    }
+  }
+
+  &__description {
+    flex: 1 1 50%;
+    animation: fadeInLeft 1s ease forwards;
+  }
+
+  &__img {
+    flex: 1 1 50%;
+    animation: fadeInRight 1s ease forwards;
+    svg {
+      object-fit: cover;
+    }
+
+    @media (max-width: 1080px) {
+      display: flex;
+      justify-content: center;
+      width: 50%;
+    }
+  }
+
+  &__human {
+  }
+}
+
+.description {
+  &_blue {
+    font-family: "Cyborg";
+    color: $colorBlue;
+    font-size: 4rem;
+    text-transform: capitalize;
+    @media (max-width: 1080px) {
+      font-size: 2.8rem;
+    }
+    @media (max-width: 768px) {
+      font-size: 2rem;
+    }
+  }
+
+  &__greeting {
+    background: #27dec038;
+    border-radius: 12px;
+    color: $colorBlue;
+    font-size: 1.6rem;
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    padding: 0.9rem 0.5rem;
+    text-transform: capitalize;
+    margin-bottom: 50px;
+    width: fit-content;
+    span {
+      display: inline-block;
+      font-size: 1.5rem;
+      animation: wobble 2.5s infinite;
+    }
+    @media (max-width: 1080px) {
+      font-size: 1.3rem;
+      span {
+        font-size: 1.5rem;
+      }
+    }
+    @media (max-width: 768px) {
+      margin: 3rem auto;
+    }
+  }
+
+  &__about {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: #f5f5f5;
+    line-height: 125%;
+    margin-bottom: 50px;
+    @media (max-width: 1080px) {
+      font-size: 2.5rem;
+    }
+    @media (max-width: 768px) {
+      text-align: center;
+    }
+  }
+
+  &__text {
+    font-size: 1.5rem;
+    color: #f5f5f5b9;
+    font-weight: 600;
+    line-height: 200%;
+    @media (max-width: 768px) {
+      text-align: center;
+      font-size: 1.2rem;
+    }
+  }
+}

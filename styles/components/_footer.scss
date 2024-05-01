@@ -1,0 +1,182 @@
+.footer {
+  &__container {
+  }
+
+  &__title {
+    text-align: center;
+    -webkit-text-stroke: 0.4px #000;
+    -webkit-text-fill-color: $colorBlue;
+    color: $colorBlue;
+    font-family: "Cyborg";
+    font-size: 3rem;
+    font-weight: 900;
+    transform: rotate(5deg);
+    margin: 0;
+    opacity: 0.9;
+    text-shadow:
+      3px 3px 0 $colorBlue,
+      -1px -1px 0 $colorBlue,
+      1px -1px 0 $colorBlue,
+      -1px 1px 0 $colorBlue,
+      1px 1px 0 $colorBlue;
+    text-transform: uppercase;
+    margin-bottom: 4rem;
+    @media (max-width: 768px) {
+      font-size: 2.5rem;
+      margin-bottom: 3.2rem;
+    }
+  }
+
+  &__contacts {
+    @extend %flexTemplate;
+    @media (max-width: 830px) {
+      flex-direction: column;
+    }
+  }
+
+  &__email {
+    @extend %flexTemplate;
+    width: 100%;
+    background-color: $colorBlue;
+    padding: 18px;
+    cursor: pointer;
+    position: relative;
+    cursor:
+      url("../../assets/images/icons/pointer.svg") 5 5,
+      move;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+    &:hover {
+      &::before {
+        background-color: rgba(0, 0, 0, 0.3);
+      }
+
+      .email__text,
+      .email__icon {
+        z-index: 0;
+      }
+    }
+  }
+
+  &__copyright {
+    font-family: "Cyborg";
+    padding: 35px;
+    background-color: rgba(37, 37, 37, 0.8);
+    text-align: center;
+    color: $colorBlue;
+    font-size: 2rem;
+    @media (max-width: 980px) {
+      font-size: 1.8em;
+    }
+    @media (max-width: 768px) {
+      font-size: 1.4em;
+    }
+  }
+}
+
+.contacts {
+  &__github,
+  &__linkedin {
+    @extend %flexTemplate;
+    flex: 1 1 50%;
+    color: #f5f5f5;
+    padding: 30px;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    &:hover {
+      &:before {
+        background-color: rgba(0, 0, 0, 0.3);
+      }
+    }
+
+    @media (max-width: 830px) {
+      width: 100vw;
+      padding: 15px;
+      justify-content: space-between;
+    }
+  }
+
+  &__github {
+    background-color: #333;
+  }
+
+  &__linkedin {
+    background-color: #0077b5;
+  }
+
+  &__icon {
+    width: 85px;
+    height: 85px;
+
+    @media (max-width: 768px) {
+      width: 65px;
+      height: 65px;
+    }
+  }
+
+  &__text {
+    font-size: 5.5rem;
+    padding-right: 7rem;
+    font-weight: 728;
+    text-align: center;
+    @media (max-width: 1085px) {
+      font-size: 3rem;
+    }
+    @media (max-width: 768px) {
+      font-size: 2rem;
+    }
+  }
+}
+
+.email {
+  &__text,
+  &__icon {
+    position: relative;
+    z-index: 1;
+  }
+  &__text {
+    font-family: "Cyborg";
+    font-size: 3rem;
+    color: #f5f5f5;
+    text-transform: uppercase;
+    margin-right: 1rem;
+    @media (max-width: 980px) {
+      font-size: 2.4rem;
+    }
+    @media (max-width: 768px) {
+      font-size: 2rem;
+    }
+  }
+
+  &__icon {
+    display: block;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    @media (max-width: 980px) {
+      height: 45px;
+      width: 45px;
+    }
+    @media (max-width: 768px) {
+      height: 40px;
+      width: 40px;
+    }
+  }
+}
