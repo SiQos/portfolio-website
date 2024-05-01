@@ -3,6 +3,7 @@
 @import "./styles/abstracts/font-style.scss";
 @import "./styles/abstracts/mixins.scss";
 @import "./styles/abstracts/animations.scss";
+@import "./styles/abstracts/extends.scss";
 
 .main {
   flex: 1 1 auto;
@@ -85,6 +86,21 @@
     img {
       width: 100px;
       height: 100px;
+
+      @media (max-width: 980px) {
+        width: 90px;
+        height: 90px;
+      }
+
+      @media (max-width: 768px) {
+        width: 80px;
+        height: 80px;
+      }
+
+      @media (max-width: 320px) {
+        width: 70px;
+        height: 70px;
+      }
     }
   }
 
@@ -469,12 +485,14 @@
     font-size: 1.6rem;
     font-weight: 900;
     letter-spacing: 0.05em;
-    padding: 0.9rem 1.5rem;
+    padding: 0.9rem 0.5rem;
     text-transform: capitalize;
     margin-bottom: 50px;
     width: fit-content;
     span {
-      font-size: 2rem;
+      display: inline-block;
+      font-size: 1.5rem;
+      animation: wobble 2.5s infinite;
     }
     @media (max-width: 1080px) {
       font-size: 1.3rem;
@@ -529,22 +547,7 @@
   }
 
   &__title {
-    @extend %flexTemplate;
-    color: $colorBlue;
-    font-size: 3rem;
-    span {
-      background-color: #12141d;
-      border-radius: 12px;
-      box-shadow: inset 0 0 4px 1px $colorBlue;
-      box-shadow: inset 0 0 4px 1px $colorBlue;
-      box-shadow: inset 0 0 4px 1px $colorBlue;
-      padding: 0.8rem 1rem;
-    }
-    margin-bottom: 100px;
-
-    @media (max-width: 768px) {
-      font-size: 2rem;
-    }
+    @extend %title;
   }
 
   &__items {
@@ -613,6 +616,255 @@
   }
 }
 
+.works {
+  margin-bottom: 100px;
+  position: relative;
+  overflow: hidden;
+
+  &__container {
+    text-align: center;
+  }
+
+  &__title {
+    @extend %title;
+  }
+
+  &__slider {
+    position: relative;
+    height: 700px;
+    margin-bottom: 50px;
+    text-align: left;
+    @media (max-width: 980px) {
+      height: 600px;
+    }
+
+    @media (max-width: 768px) {
+      height: 500px;
+    }
+
+    @media (max-width: 638px) {
+      height: 400px;
+    }
+  }
+}
+
+.slider {
+  &__btn-left,
+  &__btn-right {
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+    filter: blur(0.7px);
+    img {
+      width: 100px;
+      height: 100px;
+    }
+  }
+
+  &__btn-left {
+    left: 0px;
+    margin-left: 20px;
+    transform: rotate(-125deg);
+    &:hover {
+      transform: rotate(-180deg) scale(1.2);
+    }
+
+    @media (max-width: 476px) {
+      bottom: -125px;
+    }
+  }
+
+  &__track {
+    padding: 5rem 0px;
+    @media (max-width: 980px) {
+      padding: 4rem 0px;
+    }
+
+    @media (max-width: 768px) {
+      padding: 3rem 0px;
+    }
+
+    @media (max-width: 644px) {
+      padding: 1rem 0px;
+    }
+  }
+
+  &__bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: blur(5px);
+    }
+  }
+
+  &__items {
+    position: relative;
+    z-index: 1;
+    padding: 0px 20px;
+  }
+
+  &__item {
+    max-width: 700px;
+    margin: 0 auto;
+    background: #fdfdfd;
+    border-radius: 10px;
+    box-shadow: 0 0 18px 3px rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transform: scale(0);
+    position: absolute;
+    @media (max-width: 980px) {
+      max-width: 550px;
+    }
+
+    @media (max-width: 768px) {
+      max-width: 450px;
+    }
+
+    @media (max-width: 624px) {
+      max-width: 350px;
+    }
+  }
+
+  &__btn-right img,
+  &__btn-left img {
+    @media (max-width: 980px) {
+      width: 80px;
+      height: 80px;
+    }
+
+    @media (max-width: 768px) {
+      width: 60px;
+      height: 60px;
+    }
+
+    @media (max-width: 624px) {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  &__btn-right {
+    right: 0px;
+    margin-right: 20px;
+    transform: rotate(-45deg);
+    &:hover {
+      transform: rotate(0deg) scale(1.2);
+    }
+
+    @media (max-width: 476px) {
+      bottom: -125px;
+    }
+  }
+}
+
+.slider-item {
+  &__img {
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 7px;
+    }
+  }
+
+  &__submenu {
+    padding: 1rem;
+  }
+
+  &__title {
+    color: $colorBlue;
+    font-family: "Cyborg";
+    font-size: 1.8rem;
+    font-weight: 900;
+    text-shadow:
+      3px 3px 0 #1f2127,
+      -1px -1px 0 #1f2127,
+      1px -1px 0 #1f2127,
+      -1px 1px 0 #1f2127,
+      1px 1px 0 #1f2127;
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+    @media (max-width: 980px) {
+      font-size: 1.5rem;
+      margin-bottom: 0.7rem;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 1.3rem;
+      margin-bottom: 0.6rem;
+    }
+
+    @media (max-width: 544px) {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  &__description {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-transform: capitalize;
+    line-height: 120%;
+    @media (max-width: 980px) {
+      font-size: 1rem;
+      margin-bottom: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 0.8rem;
+      margin-bottom: 0.7rem;
+    }
+
+    @media (max-width: 544px) {
+      font-size: 0.7rem;
+      margin-bottom: 0.6rem;
+    }
+  }
+
+  &__link {
+    font-size: 1.2rem;
+    color: #000;
+    font-weight: 600;
+    border: 3px solid #000;
+    padding: 5px;
+    border-radius: 5px;
+    @media (max-width: 980px) {
+      font-size: 1.1rem;
+      border-width: 2px;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 0.9rem;
+      border-width: 1px;
+    }
+
+    @media (max-width: 544px) {
+      font-size: 0.7rem;
+    }
+  }
+}
+
+._active,
+._active-bg {
+  transition: all 0.3s ease 0s;
+  opacity: 1;
+  transform: scale(1);
+}
+
+._active {
+  position: relative;
+  transition-duration: 0.6s;
+  transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
 .footer {
   &__container {
   }
@@ -625,6 +877,7 @@
     font-family: "Cyborg";
     font-size: 3rem;
     font-weight: 900;
+    transform: rotate(5deg);
     margin: 0;
     opacity: 0.9;
     text-shadow:
@@ -635,7 +888,6 @@
       1px 1px 0 $colorBlue;
     text-transform: uppercase;
     margin-bottom: 4rem;
-    transform: rotate(5deg);
     @media (max-width: 768px) {
       font-size: 2.5rem;
       margin-bottom: 3.2rem;

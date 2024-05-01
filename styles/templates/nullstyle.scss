@@ -38,7 +38,7 @@ body {
   font-size: 16px;
   background-color: #000;
   cursor:
-    url("../../assets/images/icons/cursor.svg") 15 15,
+    url("../../assets/images/icons/cursor.svg") 5 5,
     move;
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
@@ -56,6 +56,8 @@ input::-ms-clear {
 }
 button {
   cursor: pointer;
+  border: 0;
+  background: transparent;
 }
 button::-moz-focus-inner {
   padding: 0;
@@ -93,6 +95,6 @@ input[type="submit"],
 label[for],
 select {
   cursor:
-    url("../../assets/images/icons/pointer.svg") 15 15,
+    url("../../assets/images/icons/pointer.svg") 5 5,
     move !important;
 }
