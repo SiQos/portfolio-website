@@ -101,15 +101,17 @@
       }
     }
 
-    &:hover {
-      cursor: pointer;
+    @media (hover: hover) {
+      &:hover {
+        cursor: pointer;
 
-      span {
-        top: -5px;
-      }
+        span {
+          top: -5px;
+        }
 
-      &::after {
-        top: 45px;
+        &::after {
+          top: 45px;
+        }
       }
     }
 
@@ -192,12 +194,14 @@
       text-align: center;
     }
 
-    &:hover {
-      padding: 5px 0px;
-      @media (max-width: 728px) {
-        padding: 0px;
-        position: relative;
-        left: 5px;
+    @media (hover: hover) {
+      &:hover {
+        padding: 5px 0px;
+        @media (max-width: 728px) {
+          padding: 0px;
+          position: relative;
+          left: 5px;
+        }
       }
     }
   }
@@ -247,6 +251,7 @@
       animation: 1s ease 0s 1 normal forwards running zoomIn;
       transition: opacity 0.5s ease 0s;
     }
+    overflow: auto;
   }
 }
 

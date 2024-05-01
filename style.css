@@ -626,14 +626,16 @@ select {
     top: 30px;
   }
 }
-.header__burger:hover {
-  cursor: pointer;
-}
-.header__burger:hover span {
-  top: -5px;
-}
-.header__burger:hover::after {
-  top: 45px;
+@media (hover: hover) {
+  .header__burger:hover {
+    cursor: pointer;
+  }
+  .header__burger:hover span {
+    top: -5px;
+  }
+  .header__burger:hover::after {
+    top: 45px;
+  }
 }
 .header__burger._open span {
   -webkit-transform: rotate(-135deg);
@@ -732,10 +734,12 @@ select {
     text-align: center;
   }
 }
-.menu__item:hover {
-  padding: 5px 0px;
+@media (hover: hover) {
+  .menu__item:hover {
+    padding: 5px 0px;
+  }
 }
-@media (max-width: 728px) {
+@media (hover: hover) and (max-width: 728px) {
   .menu__item:hover {
     padding: 0px;
     position: relative;
@@ -769,6 +773,7 @@ select {
   grid-template-rows: 1fr 3fr;
   width: 100%;
   max-width: 100%;
+  overflow: auto;
 }
 @media (max-width: 728px) {
   .menu._open {
@@ -1279,9 +1284,11 @@ select {
   -webkit-transform: rotate(-125deg);
           transform: rotate(-125deg);
 }
-.slider__btn-left:hover {
-  -webkit-transform: rotate(-180deg) scale(1.2);
-          transform: rotate(-180deg) scale(1.2);
+@media (hover: hover) {
+  .slider__btn-left:hover {
+    -webkit-transform: rotate(-180deg) scale(1.2);
+            transform: rotate(-180deg) scale(1.2);
+  }
 }
 @media (max-width: 476px) {
   .slider__btn-left {
@@ -1378,9 +1385,11 @@ select {
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
 }
-.slider__btn-right:hover {
-  -webkit-transform: rotate(0deg) scale(1.2);
-          transform: rotate(0deg) scale(1.2);
+@media (hover: hover) {
+  .slider__btn-right:hover {
+    -webkit-transform: rotate(0deg) scale(1.2);
+            transform: rotate(0deg) scale(1.2);
+  }
 }
 @media (max-width: 476px) {
   .slider__btn-right {
@@ -1584,8 +1593,10 @@ select {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.1);
 }
-.contacts__github:hover:before, .contacts__linkedin:hover:before {
-  background-color: rgba(0, 0, 0, 0.3);
+@media (hover: hover) {
+  .contacts__github:hover:before, .contacts__linkedin:hover:before {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
 }
 @media (max-width: 830px) {
   .contacts__github, .contacts__linkedin {

@@ -47,8 +47,10 @@
     left: 0px;
     margin-left: 20px;
     transform: rotate(-125deg);
-    &:hover {
-      transform: rotate(-180deg) scale(1.2);
+    @media (hover: hover) {
+      &:hover {
+        transform: rotate(-180deg) scale(1.2);
+      }
     }
 
     @media (max-width: 476px) {
@@ -136,8 +138,10 @@
     right: 0px;
     margin-right: 20px;
     transform: rotate(-45deg);
-    &:hover {
-      transform: rotate(0deg) scale(1.2);
+    @media (hover: hover) {
+      &:hover {
+        transform: rotate(0deg) scale(1.2);
+      }
     }
 
     @media (max-width: 476px) {
