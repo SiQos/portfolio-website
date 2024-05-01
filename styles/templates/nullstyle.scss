@@ -39,7 +39,7 @@ body {
   background-color: #000;
 
   cursor:
-    url("../../assets/images/icons/cursor.svg") 5 5,
+    url("./assets/images/icons/cursor.svg") 5 5,
     move;
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
@@ -96,6 +96,6 @@ input[type="submit"],
 label[for],
 select {
   cursor:
-    url("../../assets/images/icons/pointer.svg") 5 5,
+    url("./assets/images/icons/pointer.svg") 5 5,
     move !important;
 }

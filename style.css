@@ -37,7 +37,7 @@ body {
   line-height: 1;
   font-size: 16px;
   background-color: #000;
-  cursor: url("../../assets/images/icons/cursor.svg") 5 5, move;
+  cursor: url("./assets/images/icons/cursor.svg") 5 5, move;
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -99,18 +99,18 @@ input[type=image],
 input[type=submit],
 label[for],
 select {
-  cursor: url("../../assets/images/icons/pointer.svg") 5 5, move !important;
+  cursor: url("./assets/images/icons/pointer.svg") 5 5, move !important;
 }
 
 @font-face {
   font-family: "Cyborg";
-  src: url("../../assets/fonts/Cyborg.074aa61276a2a2f121a4.ttf");
+  src: url("./assets/fonts/Cyborg.074aa61276a2a2f121a4.ttf");
   font-weight: 400;
   font-display: swap;
 }
 @font-face {
   font-family: "Exo";
-  src: url("../../assets/fonts/ExoSpace.606b1a1e5fed2c8afb24.ttf");
+  src: url("./assets/fonts/ExoSpace.606b1a1e5fed2c8afb24.ttf");
   font-weight: 400;
   font-display: swap;
 }
@@ -1529,7 +1529,7 @@ select {
   padding: 18px;
   cursor: pointer;
   position: relative;
-  cursor: url("../../assets/images/icons/pointer.svg") 5 5, move;
+  cursor: url("./assets/images/icons/pointer.svg") 5 5, move;
 }
 .footer__email::before {
   content: "";

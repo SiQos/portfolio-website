@@ -42,7 +42,7 @@
     cursor: pointer;
     position: relative;
     cursor:
-      url("../../assets/images/icons/pointer.svg") 5 5,
+      url("./assets/images/icons/pointer.svg") 5 5,
       move;
     &::before {
       content: "";
