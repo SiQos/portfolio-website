@@ -1,5 +1,22 @@
 const sliderItems = document.querySelectorAll(".slider__item");
+const menu = document.querySelector('.menu');
+const burgerBtn = document.querySelector('.header__burger');
+
 let count = 0;
+
+document.querySelector('.header').addEventListener("click", function (e) {
+
+  if (e.target == burgerBtn) {
+    menu.classList.toggle('_open');
+    burgerBtn.classList.toggle('_open');
+    document.body.classList.toggle('_lock');
+  } else {
+    menu.classList.remove('_open');
+    burgerBtn.classList.remove('_open');
+    document.body.classList.remove('_lock');
+  }
+
+})
 
 document.querySelector('.slider').addEventListener("click", (e) => {
 

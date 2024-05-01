@@ -16,10 +16,9 @@
   <div class="header__container">
     <div class="header__logo"><img src="../assets/images/icons/avatar.png" alt="Avatar"></div>
     <nav class="header__nav">
-      <input type="checkbox" class="header__checkbox" id="burger-toggle">
-      <label for="burger-toggle" class="header__burger">
+      <button class="header__burger">
         <span></span>
-      </label>
+      </button>
       <div class="menu">
         <div class="menu_large">
           <a target="_blank" href="https://github.com/SiQos" class="github">
@@ -28,7 +27,7 @@
               <p class="github__text">GitHub</p>
             </div>
           </a>
-          <a href="" class="linkedin">
+          <a target="_blank" href="https://www.linkedin.com/in/nikolay-luzin-a39ba5181/" class="linkedin">
             <div class="linkedin__container">
               <img src="../assets/images/icons/linkedin.svg" alt="linkedin" class="linkedin__icon">
               <p class="github__text">linkedin</p>
@@ -37,10 +36,20 @@
         </div>
         <div class="menu_small">
           <ul class="menu__list">
-            <li class="menu__item"><a href="#" class="menu__link">Home</a></li>
-            <li class="menu__item"><a href="" class="menu__link">Works</a></li>
-            <li class="menu__item"><a href="" class="menu__link">Resume</a></li>
-            <li class="menu__item"><a href="" class="menu__link">Contact</a></li>
+            <li class="menu__item">
+              <a href="" class="menu__link">Home</a>
+            </li>
+            <li class="menu__item">
+              <a href="#works" class="menu__link">Works</a>
+            </li>
+            <li class="menu__item">
+              <a target="_blank"
+                href="https://hh.kz/applicant/resumes/view?resume=7e20645aff0b366cf70039ed1f7547636b7447"
+                class="menu__link">Resume</a>
+            </li>
+            <li class="menu__item">
+              <a target="_blank" href="https://t.me/Cromian" class="menu__link">Contact</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -1216,7 +1225,7 @@
           </div>
         </div>
       </section>
-      <section class="works">
+      <section id="works" class="works">
         <div class="works__container">
           <h2 class="works__title"><span>Works</span></h2>
           <div class="works__slider slider">
@@ -1277,7 +1286,7 @@
       </a>
     </div>
     <div class="footer__email email">
-      <p class="email__text">shoot me a mail</p>
+      <a target="_blank" href="https://t.me/Cromian" class="email__text">shoot me a mail</a>
       <img src="../assets/images/icons/message.svg" alt="message" class="email__icon">
     </div>
     <div class="footer__copyright">Built From Scratch With <span>&#9829</span></div>

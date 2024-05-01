@@ -32,6 +32,7 @@
   @extend %flexTemplate;
   color: $colorBlue;
   font-size: 3rem;
+  animation: flip 1s ease forwards;
   span {
     background-color: #12141d;
     border-radius: 12px;
